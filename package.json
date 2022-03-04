@@ -6,15 +6,16 @@
     "nprogress": "^0.2.0"
   },
   "devDependencies": {
-    "rollup-plugin-vue": "^5.1.9",
-    "rollup-plugin-commonjs": "*",
-    "vue-template-compiler": "*",
-    "rollup-plugin-node-resolve": "*",
-    "@rollup/plugin-babel": "*",
     "@babel/core": "*",
     "@babel/preset-env": "*",
+    "@rollup/plugin-babel": "*",
     "postcss": "*",
-    "rollup-plugin-postcss": "*"
+    "rollup-plugin-commonjs": "*",
+    "rollup-plugin-node-resolve": "*",
+    "rollup-plugin-postcss": "*",
+    "rollup-plugin-uglify": "^6.0.4",
+    "rollup-plugin-vue": "^5.1.9",
+    "vue-template-compiler": "*"
   },
   "scripts": {
     "build": "rollup -c"

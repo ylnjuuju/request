@@ -1,8 +1,5 @@
 import axios from 'axios'
-// import { Message, Loading } from 'element-ui'
 import Toast from './toast/index'
-// import Vue from 'vue'
-// Vue.use(Toast)
 import JSONbig from 'json-bigint'
 
 import NProgress from 'nprogress'
@@ -16,7 +13,7 @@ const optionsLoading = {
 }
 
 class RequestPromise extends Promise {
-  dataToArray = () => {
+  dataToArray() {
     return this.then(data => {
       const { success } = this.options || {}
 
@@ -35,7 +32,7 @@ class RequestPromise extends Promise {
     })
   }
 
-  message = (options) => {
+  message(options) {
     this.options = options || {}
 
     return this
