@@ -1,3 +1,4 @@
+/* base request 1.0.0 2021.3.5 @copyright cbwl yyhh*/
 import axios from 'axios'
 import Toast from './toast/index'
 import JSONbig from 'json-bigint'
