@@ -103,13 +103,7 @@ export class BaseRequest {
           // 加载进度Loading
           NProgress.start()
         }
-        if (
-          config.url.indexOf('seller/upload/policy') === -1 && // 上传策略
-          config.url.indexOf('buyer/form-template/validate') === -1 && // 加入购物车需要多次
-          config.url.indexOf('tools/form/replace') === -1 // 地址转换
-        ) {
-          cancelPending(config)
-        }
+        cancelPending(config)
         config.cancelToken = new CancelToken(res => {
           pending.push({ 'UrlPath': config.url, 'Cancel': res, ...config })
         })
@@ -137,13 +131,7 @@ export class BaseRequest {
           // 关闭进度Loading
           NProgress.done()
         }
-        if (
-          response.config.url.indexOf('seller/upload/policy') === -1 &&
-          response.config.url.indexOf('buyer/form-template/validate') === -1 &&
-          response.config.url.indexOf('tools/form/replace') === -1 // 地址转换
-        ) {
-          cancelPending(response.config)
-        }
+        cancelPending(response.config)
         tryHideFullScreenLoading()
         return response.data
       },
@@ -199,7 +187,7 @@ export class BaseRequest {
     try {
       domain = window.domain_config.api_domain.domain
     } catch (error) {
-      domain = 'hulihuzhu.com'
+      domain = ''
     }
     let secure
     try {
